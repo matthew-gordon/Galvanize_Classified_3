@@ -31,7 +31,7 @@
 <div class="classifieds-container flex">
   <div ng-repeat="listing in $ctrl.listings | orderBy: $ctrl.sortByValue.value :false | filter: searchText" class="listing-container">
     <div class="listing-header center">
-      <img ng-src="{{ listing.item_image }}">
+      <img id="card-img" ng-src="{{ listing.item_image }}">
     </div>
     <div class="reveal">
       <div class="listing-body">
