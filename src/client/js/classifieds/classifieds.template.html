@@ -1,35 +1,16 @@
-<h2>Hello from listings component!</h2>
-Filter:<br>
-<input ng-model="searchText" type="text" name="filter"><br>
-Sort by {{ $ctrl.sortByValue.label }}<br>
+<div class="toolbar flex-toolbar">
+  <div class="">
+    Filter:
+    <input ng-model="searchText" type="text" name="filter"><br>
+  </div>
 
-<select ng-model="$ctrl.sortByValue" ng-options="option.label for option in $ctrl.options">
-  <option value="">-- Sort --</option>
-</select>
-
-<table>
-  <thead>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Item Image</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="listing in $ctrl.listings | orderBy: $ctrl.sortByValue.value :false | filter: searchText">
-      <td> {{ listing.id }}</td>
-      <td> {{ listing.title }}</td>
-      <td> {{ listing.description }} </td>
-      <td> {{ listing.price }} </td>
-      <td> {{ listing.item_image }} </td>
-      <td><a href="#" ng-click="$ctrl.editFormToggle(listing)">edit</a> <a ng-click="$ctrl.deleteListing(listing.id)" href="#">delete</a></td>
-    </tr>
-  </tbody>
-</table>
-<br>
-
-<button type="submit" name="button" ng-click="$ctrl.createFormToggle()">Post New Classified</button>
-<button ng-click="$ctrl.getAll()" type="submit" name="button">Get All Classifieds</button><br><br>
+  <div class="">
+    Sort by {{ $ctrl.sortByValue.label }}
+    <select ng-model="$ctrl.sortByValue" ng-options="option.label for option in $ctrl.options">
+      <option value="">-- Sort --</option>
+    </select>
+  </div>
+</div>
 
 <form name="$ctrl.createForm" ng-if="$ctrl.showCreateForm" ng-submit="$ctrl.add($ctrl.listing); $event.stopPropagation();">
   <input ng-model="$ctrl.listing.title" type="text" name="title" placeholder="Title"><br><br>
@@ -46,3 +27,23 @@ Sort by {{ $ctrl.sortByValue.label }}<br>
   <input ng-model="$ctrl.listing.item_image" type="text" name="itemImage" placeholder="Image URL"><br>
   <button type="submit" name="button">Submit</button>
 </form>
+
+<div class="classifieds-container flex">
+  <div ng-repeat="listing in $ctrl.listings | orderBy: $ctrl.sortByValue.value :false | filter: searchText" class="listing-container">
+    <div class="listing-header center">
+      <img ng-src="{{ listing.item_image }}">
+    </div>
+    <div class="listing-body">
+      <h5>{{ listing.title }}</h5>
+      <p>{{ listing.description }}</p>
+    </div>
+    <div class="listing-footer flex">
+      <button ng-click="$ctrl.editFormToggle(listing)" type="button" name="edit">Edit</button>
+      <button ng-click="$ctrl.deleteListing(listing.id)" type="button" name="delete">Delete</button>
+    </div>
+  </div>
+</div>
+<br>
+
+<button type="submit" name="button" ng-click="$ctrl.createFormToggle()">Post New Classified</button>
+<button ng-click="$ctrl.getAll()" type="submit" name="button">Get All Classifieds</button><br><br>

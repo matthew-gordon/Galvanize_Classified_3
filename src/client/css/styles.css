@@ -185,6 +185,10 @@ ul {
   margin: 0;
 }
 
+img {
+  width: 50%;
+}
+
 .center {
   text-align: center;
 }
@@ -194,6 +198,22 @@ ul {
 .main-nav {
   /*border: 1px solid #000;*/
   height: 50px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex-toolbar {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .flex-nav {
@@ -211,6 +231,29 @@ ul {
   /*border: 1px solid #000;*/
   align-items: center;
   align-self: center;
+}
+
+/* --- Classified --- */
+.listing-container {
+  margin: 0 auto;
+  border: 1px solid gainsboro;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+.listing-container:hover {
+  margin: 0 auto;
+  border: 1px solid gainsboro;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.listing-header,
+.listing-body,
+.listing-footer {
+ margin: 20px;
 }
 
 /* Larger than mobile */
