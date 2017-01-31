@@ -10,8 +10,12 @@
 /***************************************************** BASE SKELETON STYLES ***/
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
+
 body {
+  padding: 0;
+  margin: 0;
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
@@ -176,10 +180,45 @@ label > .label-body {
   font-weight: normal; }
 
 /************************************************************** CUSTOM CSS ***/
+ul {
+  padding: 0;
+  margin: 0;
+}
 
+.center {
+  text-align: center;
+}
+
+/* --- NAVIGATION --*/
+
+.main-nav {
+  /*border: 1px solid #000;*/
+  height: 50px;
+}
+
+.flex-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: inherit;
+}
+
+.nav-item {
+  flex-grow: 1;
+  flex-basis: 200px;
+  /*border: 1px solid #000;*/
+  align-items: center;
+  align-self: center;
+}
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (max-width: 400px) {
+  .main-nav {
+    display: none;
+  }
+}
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {}
