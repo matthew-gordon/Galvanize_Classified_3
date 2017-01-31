@@ -17,7 +17,7 @@
   <textarea ng-model="$ctrl.listing.description" name="description" placeholder="Description"></textarea><br><br>
   <input ng-model="$ctrl.listing.price" type="number" name="price" placeholder="Price"><br><br>
   <input ng-model="$ctrl.listing.item_image" type="text" name="itemImage" placeholder="Image URL"><br>
-  <button type="submit" name="button">Create</button>
+  <button id="create-btn" type="submit" name="button">Create</button>
 </form>
 
 <form class="form-container" name="$ctrl.editForm" ng-if="$ctrl.showEditForm" ng-submit="$ctrl.editListing($ctrl.listing); $event.stopPropagation();">
@@ -25,7 +25,7 @@
   <textarea ng-model="$ctrl.listing.description" name="description" placeholder="Description"></textarea><br><br>
   <input ng-model="$ctrl.listing.price" type="number" name="price" placeholder="Price"><br><br>
   <input ng-model="$ctrl.listing.item_image" type="text" name="itemImage" placeholder="Image URL"><br>
-  <button type="submit" name="button">Submit</button>
+  <button id="submit-btn" type="submit" name="button">Submit</button>
 </form>
 
 <div class="classifieds-container flex">

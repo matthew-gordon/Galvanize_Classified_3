@@ -297,6 +297,16 @@ img {
   margin: 3em;
 }
 
+#submit-btn,
+#create-btn {
+  margin: 2rem;
+}
+
+/* --- Toolbar --- ***/
+.toolbar {
+  margin: 2rem;
+}
+
 /* Larger than mobile */
 @media (max-width: 400px) {
   .main-nav {
