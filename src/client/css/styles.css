@@ -222,7 +222,6 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: inherit;
 }
 
 .nav-item {
@@ -233,15 +232,28 @@ img {
   align-self: center;
 }
 
+/* --- Form --- */
+
+.form-container {
+  padding: 25px;
+}
+
+.form-container input, textarea {
+  width: 100%;
+}
+
 /* --- Classified --- */
+
 .listing-container {
   margin: 0 auto;
   border: 1px solid gainsboro;
   width: 300px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
+  overflow: hidden;
 }
+
 .listing-container:hover {
   margin: 0 auto;
   border: 1px solid gainsboro;
@@ -253,7 +265,36 @@ img {
 .listing-header,
 .listing-body,
 .listing-footer {
- margin: 20px;
+ margin: 10px;
+}
+
+.listing-header {
+  height: 100px;
+}
+
+.listing-body {
+  height: 140px;
+}
+
+.reveal {
+  /*border:1px solid #000;*/
+  border-top: 1px solid gainsboro;
+  position: relative;
+  height: inherit;
+  top: 5rem;
+  transition: 0.2s;
+  background: #fff;
+}
+
+.reveal:hover {
+  border-top: 1px solid gainsboro;
+  /*border:1px solid #000;*/
+  position: relative;
+  top: -10px;
+}
+
+.buttons-main {
+  margin: 3em;
 }
 
 /* Larger than mobile */

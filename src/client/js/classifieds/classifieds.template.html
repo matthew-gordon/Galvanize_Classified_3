@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<form name="$ctrl.createForm" ng-if="$ctrl.showCreateForm" ng-submit="$ctrl.add($ctrl.listing); $event.stopPropagation();">
+<form class="form-container" name="$ctrl.createForm" ng-if="$ctrl.showCreateForm" ng-submit="$ctrl.add($ctrl.listing); $event.stopPropagation();">
   <input ng-model="$ctrl.listing.title" type="text" name="title" placeholder="Title"><br><br>
   <textarea ng-model="$ctrl.listing.description" name="description" placeholder="Description"></textarea><br><br>
   <input ng-model="$ctrl.listing.price" type="number" name="price" placeholder="Price"><br><br>
@@ -20,7 +20,7 @@
   <button type="submit" name="button">Create</button>
 </form>
 
-<form name="$ctrl.editForm" ng-if="$ctrl.showEditForm" ng-submit="$ctrl.editListing($ctrl.listing); $event.stopPropagation();">
+<form class="form-container" name="$ctrl.editForm" ng-if="$ctrl.showEditForm" ng-submit="$ctrl.editListing($ctrl.listing); $event.stopPropagation();">
   <input ng-model="$ctrl.listing.title" type="text" name="title" placeholder="Title"><br><br>
   <textarea ng-model="$ctrl.listing.description" name="description" placeholder="Description"></textarea><br><br>
   <input ng-model="$ctrl.listing.price" type="number" name="price" placeholder="Price"><br><br>
@@ -33,17 +33,21 @@
     <div class="listing-header center">
       <img ng-src="{{ listing.item_image }}">
     </div>
-    <div class="listing-body">
-      <h5>{{ listing.title }}</h5>
-      <p>{{ listing.description }}</p>
-    </div>
-    <div class="listing-footer flex">
-      <button ng-click="$ctrl.editFormToggle(listing)" type="button" name="edit">Edit</button>
-      <button ng-click="$ctrl.deleteListing(listing.id)" type="button" name="delete">Delete</button>
+    <div class="reveal">
+      <div class="listing-body">
+        <h5>{{ listing.title }}</h5>
+        <p>{{ listing.description }}</p>
+      </div>
+      <div class="listing-footer flex">
+        <button ng-click="$ctrl.editFormToggle(listing)" type="button" name="edit">Edit</button>
+        <button ng-click="$ctrl.deleteListing(listing.id)" type="button" name="delete">Delete</button>
+      </div>
     </div>
   </div>
 </div>
 <br>
 
-<button type="submit" name="button" ng-click="$ctrl.createFormToggle()">Post New Classified</button>
-<button ng-click="$ctrl.getAll()" type="submit" name="button">Get All Classifieds</button><br><br>
+<div class="buttons-main center">
+  <button type="submit" name="button" ng-click="$ctrl.createFormToggle()">Post New Classified</button>
+  <button ng-click="$ctrl.getAll()" type="submit" name="button">Get All Classifieds</button><br><br>
+</div>
