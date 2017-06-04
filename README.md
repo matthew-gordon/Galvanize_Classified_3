@@ -1,4 +1,4 @@
-# Galvanize Classified - Part 3
+# Galvanize Classified - Part 4
 
 ## Read the entire README before beginning. Commit often.
 
